@@ -6,9 +6,9 @@
 
 import app from '../app';
 import http from 'http';
-import debug from "debug";
+import debugLib from "debug";
 
-const logger = debug('notebook01:server');
+const debug = debugLib(process.env.DEBUG || 'notebook01:server');
 
 /**
  * Get port from environment and store in Express.
@@ -86,5 +86,5 @@ function onListening() {
     const bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    logger('Server "' + process.env.NODE_ENV + '" listening on ' + bind);
+    debug(`Project '${process.env.NAME}' server '${process.env.NODE_ENV}' listening on '${bind}'`);
 }
