@@ -86,5 +86,5 @@ function onListening() {
     const bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    logger('Listening on ' + bind);
+    logger('Server "' + process.env.NODE_ENV + '" listening on ' + bind);
 }
