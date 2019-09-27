@@ -1,3 +1,5 @@
-# notebook01
+# project notebook01
 
-project notebook 01
+built with:
+- nodejs - environment
+- expressjs - back-end framework
