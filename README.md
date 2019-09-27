@@ -32,3 +32,27 @@ restart when file changes
 ```shell
 npm run watch
 ```
+
+### production
+
+#### run clean
+
+babel remove dist
+
+```shell
+npm run clean
+```
+
+#### run build
+
+babel build to dist
+
+```shell
+npm build
+```
+
+#### run production
+
+```shell
+npm start
+```
