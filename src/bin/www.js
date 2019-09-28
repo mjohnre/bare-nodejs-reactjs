@@ -4,11 +4,9 @@
  * Module dependencies.
  */
 
+import logger from "../module/winston";
 import app from '../app';
 import http from 'http';
-import debugLib from "debug";
-
-const debug = debugLib(process.env.DEBUG || 'notebook01:server');
 
 /**
  * Get port from environment and store in Express.
@@ -86,5 +84,6 @@ function onListening() {
     const bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    debug(`Project '${process.env.NAME}' server '${process.env.NODE_ENV}' listening on '${bind}'`);
+    logger.info('Start');
+    logger.info(`Project '${process.env.NAME}' server '${process.env.NODE_ENV}' listening on '${bind}'`);
 }
