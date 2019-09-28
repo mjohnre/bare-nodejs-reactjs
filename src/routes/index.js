@@ -4,9 +4,12 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.send(JSON.stringify({
-        'result': 'API root'
-    }));
+
+    const data = {
+        message: 'API root'
+    };
+
+    res.json(data);
 });
 
 export default router;

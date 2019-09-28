@@ -9,7 +9,7 @@ router.get('/demo', function (req, res, next) {
         'message': 'API demo is working'
     };
 
-    res.send(JSON.stringify(data, null, 2));
+    res.json(data);
 });
 
 export default router;

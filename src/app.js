@@ -35,9 +35,13 @@ app.use(function (req, res, next) {
     // add this line to include winston logging
     logger.error(`${err.status || 404} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
 
+    const data = {
+        message: 'Not found'
+    };
+
     // render the error page
     res.status(err.status || 404);
-    res.send('Not found');
+    res.json();
 });
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
@@ -47,9 +51,13 @@ app.use(function (err, req, res, next) {
     // add this line to include winston logging
     logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
 
+    const data = {
+        message: 'Not found'
+    };
+
     // render the error page
     res.status(err.status || 500);
-    res.send('error');
+    res.json(data);
 });
 
 export default app;
