@@ -3,11 +3,16 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import logger from "./module/winston";
+import helmet from "helmet";
 
 import indexRouter from './routes';
 import demoRouter from './routes/demo';
 
 const app = express();
+
+//==security
+app.use(helmet());
+app.disable('x-powered-by');
 
 //express middleware
 //logger
