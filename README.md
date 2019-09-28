@@ -1,4 +1,4 @@
-# project notebook01
+# project bare-webapp-nodejs-reactjs
 
 built with:
 - nodejs - environment
